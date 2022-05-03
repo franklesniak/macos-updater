@@ -1,0 +1,26 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/docs/macOS_upgrade_vs_update.md"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [
+                    "neutral",
+                    "confident",
+                    "optimistic",
+                    "respectful",
+                    "friendly",
+                    "analytical"
+                ],
+                "goals": [
+                    "inform",
+                    "describe"
+                ]
+            }
+        }
+    ]
+}
