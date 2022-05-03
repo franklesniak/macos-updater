@@ -5,7 +5,7 @@ Information (and maybe eventually tools) for updating macOS, including installed
 
 Using Terminal, you can update macOS by following these steps:
 
-1. Determine if an **upgrade** or **update** is required
+1. [Determine if an **upgrade** or **update** is required](./docs/macOS_upgrade_vs_update.md)
 1. If applicable, install a macOS **upgrade**
 1. **Update** macOS, including all applicable operating system components
 1. Determine if Homebrew is installed
