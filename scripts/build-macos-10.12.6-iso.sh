@@ -1,10 +1,17 @@
+# Thanks to Cody Krieger for providing a workaround for the busted macOS Sierra
+# installer
+# See: https://krieger.io/creating-bootable-macos-sierra-installation-media-on-macos-catalina/
+
 OS_NAME="macOS Sierra"
 OS_VERSION="10.12.6"
 
 # In the "Use a web browser for older versions" section on this website:
 # https://support.apple.com/en-us/102662
 # download macOS Sierra 10.12 (InstallOS.dmg).
-# Alternatively, run the following:
+# Make sure the file downloaded is named "InstallOS.dmg" and is in your Downloads
+# folder.
+#
+# Alternatively, run the following to perform the download:
 curl -o "$HOME/Downloads/InstallOS.dmg" http://updates-http.cdn-apple.com/2019/cert/061-39476-20191023-48f365f4-0015-4c41-9f44-39d3d2aca067/InstallOS.dmg
 
 # Mount the newly-downloaded InstallOS.dmg disk image
@@ -63,3 +70,17 @@ rm "/tmp/macOS-$OS_VERSION.sparseimage"
 
 # Rename the ISO image and move it to the desktop
 mv "/tmp/macOS-$OS_VERSION.cdr" "$HOME/Desktop/macOS-$OS_VERSION.iso"
+
+#######################################################################################
+# To install macOS Sierra 10.12.6 in a virtual machine, boot the virtual machine to the
+# ISO then select yoru language. Using the menu, select Utilities, then Terminal.
+# Once in Terminal, run the following command:
+# date 0101010119
+# This sets the date to January 1, 2017, which is the date of the certificate used to
+# sign the installer. This is necessary because the certificate used to sign the
+# installer has expired and the installer will fail at the end of the process without
+# this workaround.
+#
+# Next, reboot the mac using the Apple menu, then select Restart.
+#
+# Once the mac has restarted, you can now install macOS Sierra 10.12.6.
