@@ -73,14 +73,11 @@ mv "/tmp/macOS-$OS_VERSION.cdr" "$HOME/Desktop/macOS-$OS_VERSION.iso"
 
 #######################################################################################
 # To install macOS Sierra 10.12.6 in a virtual machine, boot the virtual machine to the
-# ISO then select yoru language. Using the menu, select Utilities, then Terminal.
-# Once in Terminal, run the following command:
-# date 0101010119
-# This sets the date to January 1, 2017, which is the date of the certificate used to
-# sign the installer. This is necessary because the certificate used to sign the
-# installer has expired and the installer will fail at the end of the process without
-# this workaround.
-#
-# Next, reboot the mac using the Apple menu, then select Restart.
-#
-# Once the mac has restarted, you can now install macOS Sierra 10.12.6.
+# ISO then select your language. Make sure the virutal machine has an Internet
+# connection. Using the menu, select Utilities, then Terminal. Once in Terminal, run
+# the following command:
+# ntpdate -vu time.apple.com
+# This ensures your virtual machine has the correct time. Once the time is correct,
+# you can now install macOS Sierra 10.12.6. Exit Terminal by clicking the Terminal menu
+# and selecting Quit Terminal. Then, click the Install macOS menu item to begin the
+# installation process.
