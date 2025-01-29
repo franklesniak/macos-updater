@@ -1,3 +1,8 @@
+# Note: unfortunately, these instructions do not work. Near the end of the installation
+# process, the installer will fail with an error message:
+# "The installer payload failed signature check"
+# I have not yet found the root cause of this issue, nor a workaround.
+
 # Thanks to Cody Krieger for providing a workaround for the busted macOS Sierra
 # installer
 # See: https://krieger.io/creating-bootable-macos-sierra-installation-media-on-macos-catalina/
@@ -15,13 +20,13 @@ OS_VERSION="10.12.6"
 curl -o "$HOME/Downloads/InstallOS.dmg" http://updates-http.cdn-apple.com/2019/cert/061-39476-20191023-48f365f4-0015-4c41-9f44-39d3d2aca067/InstallOS.dmg
 
 # Mount the newly-downloaded InstallOS.dmg disk image
-hdiutil attach "$HOME/Downloads/InstallOS.dmg" -noverify -nobrowse -mountpoint /Volumes/Install\ macOS
+hdiutil attach "$HOME/Downloads/InstallOS.dmg" -noverify -nobrowse -mountpoint "/Volumes/Install macOS"
 
 # Extract the contents of the installer package to your desktop
-pkgutil --expand-full /Volumes/Install\ macOS/InstallOS.pkg "$HOME/Desktop/InstallOS"
+pkgutil --expand-full "/Volumes/Install macOS/InstallOS.pkg" "$HOME/Desktop/InstallOS"
 
 # Unmount the InstallOS.dmg file
-hdiutil detach /Volumes/Install\ macOS
+hdiutil detach "/Volumes/Install macOS"
 
 # Delete the downloaded InstallOS.dmg
 rm "$HOME/Downloads/InstallOS.dmg"
